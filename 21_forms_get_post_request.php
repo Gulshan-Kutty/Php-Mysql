@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/Php-Mysql/21_forms_get_post_request.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -49,18 +49,26 @@
   </div>
 </nav>
 <?php
-if (isset($_post)){
-  $email = $_post['email'];
-  $password = $_post['pass'];
+    if ($_SERVER['REQUEST_METHOD']=='POST'){
+      $email = $_POST['email'];
+      $password = $_POST['pass'];
+      // Submit these to a database
+// As of now we haven't created/connected to database, so we will show these in terms of alert.
+      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> Your email '.$email.' and passsword '.$password.' has been submitted successfully.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>';
 }
 
-// Submit these to a database
-// As of now we haven't created/connected to database, so we will show these in terms of alert.
-
 ?>
+
+
+
 <div class="container mt-3">
     <h1>Please enter your email and password</h1>
-  <form action="/gulphp/21_forms_get_post_request.php" method="post">
+  <form action="/Php-Mysql/21_forms_get_post_request.php" method="post">
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"> <!-- name added seperately -->
