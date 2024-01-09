@@ -66,7 +66,7 @@
 
       // Die if connection was not successful
       if (!$conn){
-          die("Sorry we failed to connect:".mysqli_connect_error());
+          die("Sorry we failed to connect:".mysqli_connect_error()); // don't show such technical error messages to the user,instead show user friendly messages.
       }
       else{
           echo "connection was successful<br>";
@@ -87,7 +87,13 @@
         </div>';
       }
       else{
-          echo "The data was not inserted successfully because of this error.--->". mysqli_error($conn);
+          // echo "The data was not inserted successfully because of this error.--->". mysqli_error($conn);
+          echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Error!</strong> We are facing some technical issues and your entry was not submitted. We regret the inconvenience caused!.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          </div>';
       }
 
 }
