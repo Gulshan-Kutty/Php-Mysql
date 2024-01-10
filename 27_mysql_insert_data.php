@@ -16,9 +16,13 @@ if (!$conn){
 else{
     echo "connection was successful<br>";
 }
+// Variables to be inserted into the table
+$empno = 101;
+$ename = 'Abhijeet';
+$contact = 8748492345;
 
-// insert data into the table
-$sql = "insert into emp(eno, ename, mob_no) values (101,'mithun',123456)";
+// sql query to be executed
+$sql = "insert into emp(eno, ename, mob_no) values ('$empno','$ename','$contact')";
 $result = mysqli_query($conn, $sql);
 
 // Check for the data insertion success
