@@ -22,7 +22,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/Php-Mysql/28_mysql_saving_data_to_db.php">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/Php-Mysql/28_mysql_saving_data_to_db_from_frontend.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -59,7 +59,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "1100";
-      $database = "contacts";
+      $database = "contact_us";
 
       // Create a connection
       $conn = mysqli_connect($servername, $username, $password, $database);
@@ -73,7 +73,7 @@
       }
 
       // insert data into the table
-      $sql = "INSERT INTO `contact_us` (`name`, `email`, `concern`, `date`)
+      $sql = "INSERT INTO `contacts` (`name`, `email`, `concern`, `date`)
       VALUES ('$name', '$email', '$desc', '0000-00-00 00:00:00');";
       $result = mysqli_query($conn, $sql);
 
@@ -104,7 +104,7 @@
 
 <div class="container mt-3">
     <h1>Contact us for your concerns</h1>
-  <form action="/Php-Mysql/28_mysql_saving_data_to_db.php" method="post">
+  <form action="/Php-Mysql/28_mysql_saving_data_to_db_from_frontend.php" method="post">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp"> <!-- name added seperately -->
