@@ -1,9 +1,4 @@
 <?php
-echo "Welcome to Mysql database<br>";
-/* Ways to connect to a Mysql database
-1. MySQLi extension( i stands for improved)
-2. PDO
-*/
 
 // Connecting to the Database
 $servername = "localhost";
@@ -20,7 +15,4 @@ if (!$conn){
 else{
     echo "connection was successful<br>";
 }
-
 ?>
-
-

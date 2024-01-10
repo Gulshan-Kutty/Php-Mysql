@@ -2,7 +2,7 @@
 // Connecting to the Database
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "1100";
 $database = "dbgul";
 
 // Create a connection
