@@ -8,7 +8,7 @@ echo "Welcome to Mysql database<br>";
 // Connecting to the Database
 $servername = "localhost";
 $username = "root";
-$password = "1100";
+$password = "757449";
 
 // Create a connection
 $conn = mysqli_connect($servername, $username, $password);

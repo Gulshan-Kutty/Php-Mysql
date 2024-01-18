@@ -2,7 +2,7 @@
 // Connecting to the Database
 $servername = "localhost";
 $username = "root";
-$password = "1100";
+$password = "757449";
 $database = "dbgul";
 
 // Create a connection
@@ -17,7 +17,7 @@ else{
 }
 
 // Create a table in database
-$sql = "create table emp (eno int(10) primary key, ename varchar(10) , mob_no int(10))";
+$sql = "create table emp (eno int(10) primary key, ename varchar(10) , mob_no bigint(12))";
 $result = mysqli_query($conn, $sql);
 
 // Check for the table creation success

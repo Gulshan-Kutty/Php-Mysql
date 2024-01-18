@@ -4,7 +4,7 @@ echo "Let's create a database here:<br>";
 // Connecting to the Database
 $servername = "localhost";
 $username = "root";
-$password = "1100";
+$password = "757449";
 
 // Create a connection
 $conn = mysqli_connect($servername, $username, $password);

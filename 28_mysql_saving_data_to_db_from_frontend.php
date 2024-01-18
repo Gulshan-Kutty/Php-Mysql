@@ -58,7 +58,7 @@
       // Connecting to the Database
       $servername = "localhost";
       $username = "root";
-      $password = "1100";
+      $password = "757449";
       $database = "contact_us";
 
       // Create a connection
@@ -74,7 +74,7 @@
 
       // insert data into the table
       $sql = "INSERT INTO `contacts` (`name`, `email`, `concern`, `date`)
-      VALUES ('$name', '$email', '$desc', '0000-00-00 00:00:00');";
+      VALUES ('$name', '$email', '$desc', now());";
       $result = mysqli_query($conn, $sql);
 
       // Check for the data insertion success
