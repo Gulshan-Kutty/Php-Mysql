@@ -26,7 +26,7 @@
 @$val = $_POST['p'];
 @$sub = $_POST['sub'];
 function result($a, $b, $c){
-    if($c == 'sum'){
+    if($c == 'add'){
         $res = $a + $b;
         return $res;
     }
@@ -46,18 +46,19 @@ function result($a, $b, $c){
         return $res;
     }
     
-    else{
-        echo "please enter valid input.";
-    }
+    // else{
+    //     echo "please enter valid input.";
+    // }
     
 }
-if($sub)
-
 $output = result($num1, $num2, $val);
+
+if($sub)
 
 echo "Your result is $output";
 
 
 ?>
+
 </body>
 </html>

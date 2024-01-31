@@ -10,7 +10,7 @@ for ($i=0 ; $i < count($arr) ; $i++ ) {
 
 echo '-------------------------<br>';
 
-// better way to do this is using foreach loop as it is used to for iterable/sequential object
+// better way to do this is using foreach loop as it is used for iterable/sequential object
 foreach ($arr as $value) {
     # code...
     echo $value;
