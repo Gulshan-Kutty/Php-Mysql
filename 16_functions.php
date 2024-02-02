@@ -11,9 +11,9 @@ function process_marks($marksArr){
     return $sum;
 }
 
-$rohan = [23,34,45,56,67,77];
+$rohan = [23,34,45,56,67,77]; 
 
-$sumMarks = process_marks($rohan);
+$sumMarks = process_marks($rohan); // Variable length argument
 
 echo "Total marks scored by rohan out of 600 is $sumMarks";
 
