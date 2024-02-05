@@ -48,26 +48,11 @@
     </form>
   </div>
 </nav>
-<?php
-    if ($_SERVER['REQUEST_METHOD']=='POST'){
-      $email = $_POST['email'];
-      $password = $_POST['pass'];
-      // Submit these to a database
-     // As of now we haven't created/connected to database, so we will show these in terms of alert.
-      echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-      <strong>Success!</strong> Your email '.$email.' and passsword '.$password.' has been submitted successfully.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>';
-}
-
-?>
 
 
 <div class="container mt-3">
     <h1>Please enter your email and password</h1>
-  <form action="/Php-Mysql/21_forms_get_post_request.php" method="post">
+  <form action="php_post.php" method="get">
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"> <!-- name added seperately -->
