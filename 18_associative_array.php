@@ -6,7 +6,7 @@
 
 
 // Associative arrays
-$favcol = array('arun'=> 'red', 'rohan'=> 'green', 'harry'=>'blue', 8=>'this');
+$favcol = array('arun'=>'red', 'rohan'=>'green', 'harry'=>'blue', 8=>'pink');
 /*
 echo $favcol['arun'];
 echo "<br>";
