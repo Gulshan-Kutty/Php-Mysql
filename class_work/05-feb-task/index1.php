@@ -20,7 +20,37 @@
 				<div class="form-group">
 					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Password</label>
 					<div class="col-sm-10 col-md-10 col-xs-12">
-						<input type="password" class="form-control" name="password" placeholder="Enter Your Passwords"/>
+						<input type="password" class="form-control" name="password" placeholder="Enter Your Passwords" maxlength="10"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Pin Code</label>
+					<div class="col-sm-10 col-md-10 col-xs-12">
+						<input type="number" class="form-control" name="pin" placeholder="Enter Pincode"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Pan Card</label>
+					<div class="col-sm-10 col-md-10 col-xs-12">
+						<input type="text" class="form-control" name="pan" placeholder="Enter Pan Card Number"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Aadhar Card</label>
+					<div class="col-sm-10 col-md-10 col-xs-12">
+						<input type="number" class="form-control" name="aadhar" placeholder="Enter Aadhar Card Number"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Email</label>
+					<div class="col-sm-10 col-md-10 col-xs-12">
+						<input type="email" class="form-control" name="email" placeholder="Enter Your mail"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Mobile No</label>
+					<div class="col-sm-10 col-md-10 col-xs-12">
+						<input type="number" class="form-control" name="mobile" placeholder="Enter Your Mobile No"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -61,7 +91,7 @@
 					<label class="col-sm-2 control-label">Select</label>
 					<div class="col-sm-10 ">
 						<select class="form-control" name="city">
-							<option value="0">-- Select City --</option>
+							<option value="Please select your city">-- Select City --</option>
 							<option value="Nagpur">Nagpur</option>
 							<option value="Pune">Pune</option>
 							<option value="Mumbai">Mumbai</option>

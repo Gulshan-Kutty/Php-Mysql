@@ -17,7 +17,7 @@
 $a = 10;
 
 function gul(){
-    global $a;
+    global $a; //This is different from other programming languages where global variables are available without specifically referring to them as global.
     echo $a;
 }
   

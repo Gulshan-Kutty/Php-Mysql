@@ -16,7 +16,7 @@ if (!$conn){
 else{
     echo "connection was successful<br>";
 }
-// Variables to be inserted in to the table
+// Variables to be inserted into the table
 $empno = 102;
 $name = 'Samrat';
 $contact = 9786859593;
