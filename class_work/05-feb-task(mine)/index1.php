@@ -26,19 +26,19 @@
 				<div class="form-group">
 					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Pin Code</label>
 					<div class="col-sm-10 col-md-10 col-xs-12">
-						<input type="number" class="form-control" name="pin" placeholder="Enter Pincode"/>
+						<input type="text" class="form-control" name="pin" placeholder="Enter Pincode" maxlength="6"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Pan Card</label>
 					<div class="col-sm-10 col-md-10 col-xs-12">
-						<input type="text" class="form-control" name="pan" placeholder="Enter Pan Card Number"/>
+						<input type="text" class="form-control" name="pan" placeholder="Enter Pan Card Number" maxlength="10"/>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Aadhar Card</label>
 					<div class="col-sm-10 col-md-10 col-xs-12">
-						<input type="number" class="form-control" name="aadhar" placeholder="Enter Aadhar Card Number"/>
+						<input type="text" class="form-control" name="aadhar" placeholder="Enter Aadhar Card Number" maxlength="12"/>
 					</div>
 				</div>
 				<div class="form-group">
@@ -50,7 +50,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 col-md-2 col-xs-12 control-label">Mobile No</label>
 					<div class="col-sm-10 col-md-10 col-xs-12">
-						<input type="number" class="form-control" name="mobile" placeholder="Enter Your Mobile No"/>
+						<input type="text" class="form-control" name="mobile" placeholder="Enter Your Mobile No" maxlength="10"/>
 					</div>
 				</div>
 				<div class="form-group">

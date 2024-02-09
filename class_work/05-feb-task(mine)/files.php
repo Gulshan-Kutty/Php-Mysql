@@ -19,7 +19,7 @@
 
 			<p>Name = <?php echo (empty($_POST['name'])) ? "Name is required" : (preg_match('/^[a-zA-Z\s]+$/', $_POST['name']) ? $_POST['name'] : 'Enter valid name' ); ?></p> 
 
-			<p>Password = <?php echo (empty($_POST['password'])) ? "Password is required" :$_POST['password']; ?></p> 
+			<p>Password = <?php echo (empty($_POST['password'])) ? "Password is required" : md5($_POST['password']); ?></p> 
 
 			<p>Pin Code = <?php echo (empty($_POST['pin'])) ? "Pin is required" : (preg_match('/^\d{6}$/', $_POST['pin']) ? $_POST['pin'] : 'Enter valid pin' ); ?></p> 
 
@@ -35,12 +35,61 @@
 
 			<p>Gender = <?php echo (empty($_POST['gender'])) ? "Gender is required" : ucfirst($_POST['gender']); ?></p> 
 
-			<p>Hobbies = <?php echo (!empty($_POST['hobbies'])) ? ucwords(implode(" | ", $_POST['hobbies'])) : "Select at least 1 hobby"; ?> </p>
+			<p>Hobbies = <?php echo (empty($_POST['hobbies'])) ? "Select at least 1 hobby" : ucwords(implode(" | ", $_POST['hobbies'])) ; ?> </p>
 
 			<p>City = <?php echo $_POST['city']; ?></p>
 
-			<p>Photo_name = <?php echo $_FILES['photo']['name']; ?></p>
-			<p>Photo_type = <?php echo $_FILES['photo']['type']; ?></p>
-			<p>Photo_tmp_name = <?php echo $_FILES['photo']['tmp_name']; ?></p>
-			<p>Photo_error = <?php echo $_FILES['photo']['error']; ?></p>
-			<p>Photo_size = <?php echo $_FILES['photo']['size']; ?></p>
+			
+
+
+<?php
+	if ($_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
+    	switch ($_FILES['photo']['error']) {
+        	case UPLOAD_ERR_INI_SIZE:
+        	case UPLOAD_ERR_FORM_SIZE:
+           	 	echo "File size exceeds limit.";
+            	break;
+        	case UPLOAD_ERR_PARTIAL:
+            	echo "The uploaded file was only partially uploaded.";
+            	break;
+        	case UPLOAD_ERR_NO_FILE:
+				echo "No file was uploaded.<br>";
+				break;
+        	case UPLOAD_ERR_NO_TMP_DIR:
+				echo "Missing temporary folder.";
+				break;
+			case UPLOAD_ERR_CANT_WRITE:
+				echo "Failed to write file to disk.";
+				break;
+			case UPLOAD_ERR_EXTENSION:
+				echo "A PHP extension stopped the file upload.";
+				break;
+			default:
+				echo "Unknown upload error.";
+				break;
+		}
+} 
+else {
+	?>
+    File upload is successful.<br>
+    <p>Photo_name = <?php echo $_FILES['photo']['name']; ?></p>
+    <p>Photo_type = <?php echo $_FILES['photo']['type']; ?></p>
+    <p>Photo_tmp_name = <?php echo $_FILES['photo']['tmp_name']; ?></p>
+    <p>Photo_size = <?php echo $_FILES['photo']['size']; ?></p>
+    <?php
+}
+?>
+
+
+----------------------------OR------------------------------
+
+<!-- else{
+	echo "File upload is successful.<br>";
+    echo "<p>Photo_name = " . $_FILES['photo']['name'] . "</p>";
+    echo "<p>Photo_type = " . $_FILES['photo']['type'] . "</p>";
+    echo "<p>Photo_tmp_name = " . $_FILES['photo']['tmp_name'] . "</p>";
+    echo "<p>Photo_size = " . $_FILES['photo']['size'] . "</p>";
+} -->
+
+
+
