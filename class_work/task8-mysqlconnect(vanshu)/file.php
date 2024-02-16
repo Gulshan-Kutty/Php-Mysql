@@ -35,7 +35,8 @@ if(isset($_POST['save']))
 		hobbies='".implode(", ",$_POST['hobbies'])."',
 		city_id='".$_POST['city_id']."',
 		photo='".$_POST['photo']."',
-		created='".date("Y-m-d H:i:s")."'";
+		created='".date("Y-m-d H:i:s")."',
+		modified='".date("Y-m-d H:i:s")."'";
 		if(mysqli_query($conn,$insertuser))
 			echo "User has been created successfully";
 		else
