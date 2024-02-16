@@ -1,0 +1,141 @@
+body
+{
+	margin:0px;
+	font-family:arial;
+	font-size:12px
+}
+.side-bar
+{
+	background-color:#fadb74;
+	width:30px;
+	height:auto;
+}
+#main
+{
+	background-color:#ffffff;
+}
+label
+{
+	font-weight:bold;
+}
+span
+{
+	font-weight:bold;
+	color:#ff0000;
+}
+#bg-red
+{
+	height:30px;
+	background:#ff0000;
+}
+
+#content
+{
+	background-color:#eff6ff;
+	vertical-align:top;
+	
+	
+}
+#content textarea
+{
+	overflow-y: scroll;
+    height: auto;
+    resize:none;	
+}
+#content tr:nth-child(1)
+{
+	background-color:#dfefff;
+	height:20px;
+}
+
+#section
+{
+	padding: 10px 10px 0px 10px;
+}
+#mm
+{
+	margin-left:10px;
+}
+#dd
+{
+	margin-left:33px;
+}
+#yy
+{
+	margin-left:35px;
+}
+button
+{
+	width:100px;
+	height:30px;
+	text-align:left;
+	vertical-align:center;
+	font-weight:bold;
+	font-size:14px;
+	border-radius:10px;
+	border:none;
+	
+}
+.sec
+{
+	padding: 10px 10px 0px 10px;
+}
+#date
+{
+	padding:10px 10px 0px 10px;
+	background-color:#dfefff;
+	
+}
+	
+.bgblue
+{
+	background-color:#dfefff;
+}
+
+.bgsec
+{
+	background-color:#dfefff;
+	border-radius: 0px 10px 10px 10px;
+	
+}
+.sec select
+{
+	width:150px;
+}
+.text1
+{
+	width:200px;
+	
+}
+.text2
+{
+	width:300px;
+}
+#bt1
+{
+	margin-left:120px;
+	width:120px;
+	color:#00ff00;
+}
+#bt1 span, .green
+{
+color:#29a329;
+font-weight:bold;	
+}
+#bt2
+{
+	margin-left:180px;
+}
+#email
+{
+	width:99%;
+}
+.left-mar
+{
+	margin-left:5px;
+}
+#bg-button
+{
+	background-color:#fff0b3;
+	height:80px;
+}
