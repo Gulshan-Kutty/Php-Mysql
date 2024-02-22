@@ -13,25 +13,17 @@
 		{
 			$error['name'] = "Please Enter valid name";
 		}
-		if(empty(trim($_POST['email'])))
-		{
-			$error['email'] = "Please Enter your email";
-		}
-		elseif(!preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/',$_POST['email']))
-		{
-			$error['email'] = "Please Enter valid email";
-		}
 		if(empty(trim($_POST['password'])))
 		{
 			$error['password'] = "Please Enter your password";
 		}
 		elseif($MINLENGTH)
 		{
-			$error['password'] = "Your password length must be atleast 8 characters";
+			$error['password'] = "Please Enter password length must be atleast 8 charecter ";
 		}
 		elseif($MAXLENGTH)
 		{
-			$error['password'] = "Your password length must not exceed 15 characters";
+			$error['password'] = "Please Enter password length must not exceed 15 charecter";
 		}
 		if(empty(trim($_POST['address'])))
 		{
