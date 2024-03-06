@@ -1,13 +1,13 @@
 <?php
-// $var = "Hello";
+$var = "Hello";
 
-// if (isset($var)) {
-//     echo "Variable is set.";
-// } else {
-//     echo "Variable is not set.";
-// }
+if (isset($var)) {
+    echo "Variable is set.";
+} else {
+    echo "Variable is not set.";
+}
 
-// echo "<br>-----------------------------<br>"
+echo "<br>-----------------------------<br>"
 
 // $var = "";
 
@@ -19,13 +19,13 @@
 
 // echo "<br>-----------------------------<br>"
 
-$var = null;
+// $var = null;
 
-if (isset($var)) {
-    echo "Variable is set.";
-} else {
-    echo "Variable is not set.";
-}
+// if (isset($var)) {
+//     echo "Variable is set.";
+// } else {
+//     echo "Variable is not set.";
+// }
 
 // echo "<br>-----------------------------<br>"
 
