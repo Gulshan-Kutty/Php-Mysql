@@ -13,11 +13,13 @@
 				// 	print_r("Invalid file format, please upload only png or jpg file format"); exit;
 				// }
 				// print_r($photoType); exit;
+
+			
 			?>
 
 			
 
-			<p>Name = <?php echo (empty($_POST['name'])) ? "Name is required" : (preg_match('/^[a-zA-Z\s]+$/', $_POST['name']) ? $_POST['name'] : 'Enter valid name' ); ?></p> 
+			<h4>Name = <?php echo (empty($_POST['name'])) ? "Name is required" : (preg_match('/^[a-zA-Z\s]+$/', $_POST['name']) ? $_POST['name'] : 'Enter valid name' ); ?></h4> 
 
 			<p>Password = <?php echo (empty($_POST['password'])) ? "Password is required" : md5($_POST['password']); ?></p> 
 

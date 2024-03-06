@@ -1,8 +1,8 @@
 <?php
-if(isset($_POST['save']))
+if(isset($_POST['save'])) //It checks if a form element with the name "save" has been submitted using the HTTP POST method. If it has been submitted, the condition evaluates to true.
 {
 	// To call external php file for validation
-	require_once("includes/validations.php");
+	require_once("includes/validations.php"); //The require_once statement ensures that the file is included only once in the script execution, preventing duplicate inclusions.
 
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Tutorial</title>
+    <style>
+        body{font-family: arial}
+        #box{
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Selectors</h1>
+    <div id="box" class="test">
+        <h2>Text Box 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, dolores.</p>
+    </div>
+
+    <ul id="list">
+        <li>Orange</li>
+        <li class="test">Banana</li>
+        <li>Grapes</li>
+        <li class="test">Apple</li>
+        <li>Orange</li>
+    </ul>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+            $(document).ready(function(){
+            $("#list li:even").css('border','2px solid red');
+            // $(".test").css('border','2px solid red');
+            // $("*").css('border','2px solid red');
+            // $("li:first").css('border','2px solid red');
+            // $("li:last").css('border','2px solid red');
+            // $("li:first-child").css('border','2px solid red');
+            // $("ul li:eq(2)").css('border','2px solid red');
+            // $("ul li:gt(2)").css('border','2px solid red');
+            // $("ul li:lt(2)").css('border','2px solid red');
+        
+        });
+    </script>
+    
+</body>
+</html>
