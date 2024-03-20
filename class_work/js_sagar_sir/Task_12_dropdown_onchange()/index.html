@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dropdown Value to Input</title>
+
+</head>
+<body>
+    <label for="dropdown">Select an option:</label>
+    <select id="dropdown" onchange="updateOutput()">
+        <option value="cricket">Cricket</option>
+        <option value="baseball">Baseball</option>
+        <option value="kabaddi">Kabaddi</option>
+    </select>
+    
+    <br><br>
+
+    <label for="output">Selected value:</label>
+    <input type="text" id="output" readonly="true">
+    
+    <script>
+        function updateOutput() {
+            // Get references to the dropdown and output input elements
+            var dropdown = document.getElementById('dropdown'); // This line retrieves the dropdown element from the HTML document using its id, which is "dropdown". The document.getElementById() method is used to access the HTML element by its id.
+            var output = document.getElementById('output'); // This line retrieves the output/input field element from the HTML document using its id, which is "output".
+
+            // Update the value of the output input with the selected option value
+            output.value = dropdown.value;
+        }
+    </script>
+</body>
+</html>

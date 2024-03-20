@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Events</title>
+    <style>
+        body {
+            font-family: arial;
+        }
+        #box{
+            width: 70%;
+            height: 150px;
+            background: pink;
+            padding: 10px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Window Events</h1>
+    <p id="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus accusantium nisi aspernatur nihil, voluptate eum omnis modi sequi officia alias quo dolorum voluptatum ut, ea ex magnam laudantium accusamus quod nostrum dolores cupiditate sit, neque earum! Vel sit quas id perspiciatis itaque necessitatibus in, expedita optio doloribus dolores corrupti accusamus iure pariatur nemo est dolorem alias fugit incidunt a? Quibusdam autem dignissimos alias dicta, magni, debitis labore sit ratione facilis aperiam inventore, nisi enim laudantium sequi accusamus ullam? Necessitatibus recusandae voluptatibus voluptate debitis corporis odit id. Quasi veritatis sint beatae, dolor cupiditate delectus quisquam nam amet dicta, sequi molestiae non?</p>
+    <div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora totam commodi earum quod repellat dolorem omnis explicabo pariatur modi corrupti reprehenderit voluptatem, quidem itaque labore eum reiciendis repudiandae quisquam dolore illum ipsam ad blanditiis doloremque. Adipisci quasi soluta fugit magnam aspernatur consequuntur. Doloribus, soluta. Quibusdam nostrum voluptatem odio repellendus vero facilis ullam dolor ipsum corrupti totam delectus nulla, architecto nam numquam laudantium dolorum temporibus nesciunt provident voluptatum, saepe ratione magnam dolore. Et adipisci nulla placeat architecto, fuga laudantium doloribus, dolorem est corporis, enim beatae obcaecati voluptatem quam dolore velit qui tenetur molestias earum cupiditate! Ea omnis saepe eaque inventore velit! Et perferendis aperiam reprehenderit sunt sint cupiditate assumenda ab minima! Ad magni delectus facilis cupiditate architecto ea deserunt dolores placeat optio quo alias, reprehenderit repellat inventore velit maiores cum omnis consequatur laboriosam dolorem dolorum exercitationem aut obcaecati? Aliquam laborum ratione nisi inventore rem fugit quidem porro, reprehenderit possimus magnam quisquam tempore eos saepe autem, ab ducimus maiores assumenda consectetur? Minima quia accusantium necessitatibus molestiae ipsum, odit earum perspiciatis! Tempore ad dolore, quis reprehenderit architecto temporibus, accusamus maxime beatae necessitatibus sit possimus repellat explicabo voluptatum facere earum veritatis sapiente modi. Animi quidem tenetur, doloribus minima vel sapiente molestias accusamus nisi incidunt cum odio commodi praesentium laboriosam enim. Perspiciatis, ipsa, iste porro facere eveniet, qui praesentium accusantium officiis alias commodi in accusamus neque! Illum natus facere rerum fugit consequatur dolores incidunt eum sequi quae doloremque, aliquid aut ipsam quo laudantium excepturi necessitatibus esse eligendi! Veniam illo nobis, placeat assumenda suscipit et molestiae dolores! Quo ipsam dignissimos explicabo voluptatem eius nostrum numquam, cum quaerat nemo accusantium? Illo nihil non reprehenderit enim aut ipsam, atque nemo saepe illum? Eveniet alias maiores error! Suscipit, quibusdam odit cumque id delectus assumenda earum, soluta, fuga perferendis maxime eveniet explicabo aliquid dolore hic aspernatur nemo nisi quae provident accusantium natus. Omnis quod sequi voluptatibus suscipit enim, itaque commodi officia nostrum veniam debitis iure exercitationem repellendus nam! Cum maiores laboriosam sunt officiis esse, eius ipsam ipsum ut aspernatur enim corrupti quo impedit aut. Commodi repellendus numquam, sapiente aliquam illo rem voluptatum, optio eaque at officiis doloremque modi. Maiores odio, officia ipsum fugit suscipit quasi? Minima temporibus ea at ipsam iste molestias distinctio maiores cumque cum est ex dolorum animi dolore laudantium tenetur qui doloremque iure illo iusto neque voluptatibus, adipisci, explicabo non nihil. Cupiditate, libero perferendis. Eveniet ab ipsam sunt libero, autem a facere illo minus. Distinctio eius corrupti molestias modi eligendi sint ea nesciunt cupiditate voluptatem ab ducimus voluptas illum natus perferendis expedita maxime ratione saepe eos reiciendis tempora aspernatur, quis earum optio dignissimos. Fuga similique voluptate quod. Vero corporis quidem laudantium molestias placeat blanditiis odit accusamus architecto, voluptatem cupiditate inventore sapiente perferendis quia laborum labore! Magni illo sed dolor dolorem voluptatibus ipsa aspernatur dicta non sit adipisci, accusamus quasi impedit, rem laudantium vel totam doloremque ab perspiciatis. Ratione, et? Suscipit voluptas adipisci recusandae eveniet dolorum amet necessitatibus repudiandae voluptate eos voluptates nobis est quaerat magnam ratione error hic consequuntur ullam quas quam sint sequi, tempora culpa. Ipsum.</p>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                console.log("You are scrolling")
+            });
+            $('#box').scroll(function(){
+                console.log("You are scrolling")
+            });
+            $(window).resize(function(){
+                console.log("You are resizing")
+            });
+        });
+    </script>
+</body>
+</html>

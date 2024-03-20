@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{font-family: arial}
+        #box{
+            background-color: pink;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Events</h1>
+    <form action="" id="sform">
+        <label for="">Name:</label> <input type="text" id="sname"><br><br>
+        <label for="">Class:</label> <input type="text" id="sclass"><br><br>
+
+        <label for="">Country:</label>
+        <select name="" id="scountry">
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+            <option value="China">China</option>
+            <option value="China">Zimbabwe</option>
+        </select>
+        <br><br>
+        <input type="submit">
+        <!--------OR-------->
+        <!-- <button type="submit">Submit</button> -->
+
+    </form>
+
+    <div id="test" style="border:1px solid red; margin-top: 20px;"></div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+    $('#sname,#sclass,#scountry').focus(function(){
+        $(this).css('background-color','pink')
+    });
+
+    $('#sname,#sclass,#scountry').blur(function(){
+        $(this).css('background-color','')
+    });
+
+    $('#scountry').change(function(){ // generally works with dropdown(<select>)
+        // $(this).css('background-color','green')
+        var a = $(this).val();
+        $('#test').html(a);
+    });
+
+    $('#sname,#sclass').select(function(){ // generally works with textual input
+        $(this).css('background-color','yellow')
+    });
+
+    $('#sform').submit(function(event){
+        alert("Form Submitted");
+
+        // event.preventDefault();
+        // console.log("Form Submitted"); // The reason you're seeing the "Form Submitted" message only briefly in the console before it disappears is likely due to the default behavior of the form submission. When a form is submitted, the browser typically reloads the page or navigates to a new page, causing the console to clear.
+        // To prevent the default form submission behavior (which reloads the page), you can call event.preventDefault() in your form submission event handler. This will stop the default action associated with the event, allowing you to handle the form submission manually and prevent the page from reloading.
+    });
+
+    
+});
+    </script>
+</body>
+</html>

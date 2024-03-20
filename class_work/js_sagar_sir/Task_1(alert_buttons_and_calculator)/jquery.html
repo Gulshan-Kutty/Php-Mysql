@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+   
+    <button type="button" id="alertbutton">Alert</button>
+    <br><br>
+
+    <button type="button" id="confirmbutton">Confirm</button><span id="con"></span>
+    <br><br>
+
+    <button type="button" id="1button">1</button><span id="1"></span>
+    <br><br>
+
+    <button type="button" id="promptbutton">Prompt</button><span id="name"></span>
+    <br><br>
+
+    <button type="button" id="parameterbutton">My Parameter Function</button><span id="para"></span>
+    <br><br>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2" readonly="true">
+    <input type="text" id="num3" readonly="true">
+    <button type="button" id="getbutton">Get Value</button>
+    <br><br>
+ 
+    <input type="text" id="num4">
+    <input type="text" id="num5" readonly="true">
+   
+    <br><br>
+    <input type="text" id="num6">
+    <input type="text" id="num7" readonly="true">
+
+   
+    <h3>Calculator</h3>
+    <input type="text" id="v1" size="3"/>
+    <span id="operator"></span>
+    <input type="text" id="v2" size="3"/>
+    <span id="result"> </span><br><br>
+    <button type="button" data-operator="+">+</button>
+    <button type="button" data-operator="-">-</button>
+    <button type="button" data-operator="*">x</button>
+    <button type="button" data-operator="/">/</button>
+    <button type="button" data-operator="%">%</button>
+    <button type="button" id="clear">C</button>
+    
+    
+    <script>
+        $(document).ready(function(){
+            $('#alertbutton').click(function(){
+                alert("Hello brother\rlet's go somewhere.");
+            });
+
+
+            $('#confirmbutton').click(function(){
+                var conf =  confirm("Please select any one");
+                // alert(conf)
+                if (conf==true){
+                    $('#con').text('User pressed <b>confirm<b> button');
+                }else{
+                    $('#con').html('User pressed <b>cancel</b> button'); // In the provided jQuery code, .text() and .html() are both methods used to manipulate the content of HTML elements, but they function differently:
+
+                    // 1) .text():
+
+                    // When you use .text(), it sets or returns the text content of the selected elements. It treats the content as plain text, meaning it doesn't interpret any HTML tags within the content.
+                    // For example, $('#con').text('User pressed confirm button'); sets the text content of the element with the ID con to "User pressed confirm button".
+                    // If you use .text() to set HTML content, any HTML tags will be escaped, and they will display as plain text.
+
+                    // 2) .html():
+
+                    // On the other hand, .html() sets or returns the HTML content of the selected elements. It allows you to manipulate the inner HTML of an element, including HTML tags.
+                    // For instance, $('#con').html('User pressed <strong>confirm</strong> button'); sets the HTML content of the element with the ID con to "User pressed <strong>confirm</strong> button", where "confirm" is bold.
+                    // This method is useful when you need to insert HTML elements or markup dynamically into an existing element.
+                    // In summary, .text() manipulates the text content of elements, while .html() manipulates the HTML content, allowing for the inclusion of HTML markup and tags.
+                }
+            });
+
+
+            $('#1button').click(function(){
+                var conf1 =  confirm("Please select any one");
+                // alert(conf)
+                if (conf1==true){
+                    $('#1').html('1');
+                }else{
+                    $('#1').html('User pressed cancel button');
+                }
+            });
+
+
+            $('#promptbutton').click(function(){
+                var name =  prompt("Please Enter your name");
+                // alert(name)
+                if (name==null){
+                    $('#name').html("User pressed cancel button");
+                }
+                else if (name==""){
+                    $('#name').html("Please provide your name");
+                }
+                else{
+                    $('#name').html("Welcome "+name);
+                }
+            });
+
+
+            $('#parameterbutton').click(function(){
+                // Call the function with parameters
+                myParameterFunction('gulshan', 'engineer', 150000);
+                    
+                // Function with parameters
+                function myParameterFunction(name, designation, salary) {
+                $('#para').html('Welcome ' + name + ', your designation is ' + designation + ' and monthly salary is ' + salary);
+                }
+            });
+
+
+            $('#getbutton').mouseover(function(){
+                $('#num2').val($('#num1').val());
+                $('#num3').val($('#num1').val());
+            });
+
+
+            $('#num4').blur(function(){
+                $('#num5').val($('#num4').val());
+            });
+
+
+            $('#num6').keyup(function(){
+                $('#num7').val($('#num6').val());
+            });
+
+
+            // Calculator
+            // Calculator buttons click event
+            $('button[data-operator]').click(function(){
+                var operator = $(this).data('operator');
+                $('#operator').text(operator);
+                calculateResult(); // Call calculateResult function when a calculator button is clicked
+
+            });
+
+            // Calculate result
+            function calculateResult() {
+                var v1 = parseFloat($('#v1').val());
+                var v2 = parseFloat($('#v2').val());
+                var operator = $('#operator').text().trim();
+                var result;
+
+                switch(operator) {
+                    case '+':
+                        result = v1 + v2;
+                        break;
+                    case '-':
+                        result = v1 - v2;
+                        break;
+                    case '*':
+                        result = v1 * v2;
+                        break;
+                    case '/':
+                        if(v2 != 0) {
+                            result = v1 / v2;
+                        } else {
+                            result = "Undefined";
+                        }
+                        break;
+                    case '%':
+                        result = v1 % v2;
+                        break;
+                    default:
+                        result = "Invalid Operator";
+                }
+
+                $('#result').text('= ' + result);
+            }
+
+            // Calculate on value change
+            $('#v1, #v2').on('input', calculateResult);
+
+            // Clear button
+            $('#clear').click(function(){
+                $('#v1, #v2').val('');
+                $('#operator, #result').text('');
+            });
+        });
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Only Three</title>
+</head>
+<body>
+    <!-- <form name="myform">
+        <input type="checkbox" name="list" onclick="checkAll(this.form.list)">Check All<br>
+        <input type="checkbox" name="list" onclick="limitCheckbox(this)">Chennai<br>
+        <input type="checkbox" name="list" onclick="limitCheckbox(this)">Mumbai<br>
+        <input type="checkbox" name="list" onclick="limitCheckbox(this)">Kolkata<br>
+        <input type="checkbox" name="list" onclick="limitCheckbox(this)">Pune<br>
+        <input type="checkbox" name="list" onclick="limitCheckbox(this)">Nagpur<br>
+    </form>
+
+    <script>
+        function checkAll(field){
+            for (let i = 1; i < field.length; i++) {
+                field[i].checked = field[0].checked;  
+            }
+        }
+
+        function limitCheckbox(checkbox){
+            var checkboxes = document.getElementsByName("list");
+            var checkedCount = 0;
+            // console.log(checkboxes);
+            for (var i = 1; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+            if (checkedCount > 3) {
+                alert("Select only 3 checkboxes.");
+                checkbox.checked = false;
+            }
+        }
+    </script> -->
+
+    <form name="myform">
+        <h3>Make a Selection</h3>
+        <input type="checkbox" name="ckb" value="1" onclick="check(0)">Golf<br>
+        <input type="checkbox" name="ckb" value="2" onclick="check(1)">Football<br>
+        <input type="checkbox" name="ckb" value="3" onclick="check(2)">Cricket<br>
+        <input type="checkbox" name="ckb" value="4" onclick="check(3)">Rugby<br>
+        <input type="checkbox" name="ckb" value="5" onclick="check(4)">Polo<br>
+       
+      </form>
+          
+      <script>
+
+          // console.log(document.myform.ckb);
+          function check(j){
+            var  count = 0;
+            for (var i = 0; i < document.myform.ckb.length; i++){
+              if(document.myform.ckb[i].checked){
+                count = count + 1;
+              }
+              if(count > 3){
+                alert('Please select only 3');
+                document.myform.ckb[j].checked = false;
+                return false; //Stop Further Execution: After unchecking the checkbox, there's no need to continue checking other checkboxes. By returning false, the function stops further execution, preventing unnecessary checking of other checkboxes.
+              }
+            }
+          }
+
+//      ---------OR---------
+
+          // // console.log(document.getElementsByName('ckb'))
+          // function check(j){
+          //   var  count = 0;
+          //   for (var i = 0; i < document.getElementsByName('ckb').length; i++){
+          //     if(document.getElementsByName('ckb')[i].checked){
+          //       count = count + 1;
+          //     }
+          //     if(count > 3){
+          //       alert('Please select only 3');
+          //       document.myform.ckb[j].checked = false;
+          //       return false; //Stop Further Execution: After unchecking the checkbox, there's no need to continue checking other checkboxes. By    returning false, the function stops further execution, preventing unnecessary checking of other checkboxes.
+          //     }
+          //   }
+          // }
+
+
+      </script>
+
+
+      <!-- Explanation:
+      The return false; statement inside the check(j) function is only returning false for that specific function call. It doesn't stop the for loop directly. However, it effectively halts further execution of the function because the function stops running once return false; is encountered.
+
+      Here's how it works:
+      
+      1. When the user clicks a checkbox, the check(j) function is called.
+      2. Inside the function, a loop iterates over all the checkboxes to count how many are checked.
+      3. If the count exceeds 3, an alert is shown, and the checkbox that caused the count to exceed 3 is unchecked.
+      4. After that checkbox is unchecked, return false; is encountered, which immediately stops the execution of the check(j) function, preventing further processing within that function call.
+
+      So, return false; is used to halt the function once the condition for limiting the checkbox selection is met, ensuring that the user can only select up to three checkboxes.-->
+</body> 
+</html>

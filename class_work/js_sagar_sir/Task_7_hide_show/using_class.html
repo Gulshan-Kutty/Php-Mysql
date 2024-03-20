@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <button onclick="visibility()">Button</button>
+    <div id="content" class="hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam fugit consequuntur nisi, neque nihil minus atque voluptatibus numquam. Assumenda, distinctio.</div>
+
+<script>
+   function visibility(){
+    var a = document.getElementById('content')  // This allows us to reference and manipulate the element using the variable 'a' within the script.
+    // console.log(a);
+    if(a.classList.contains('hidden')){
+        content.classList.remove('hidden'); // we removed class here
+    }
+    else{
+        content.classList.add('hidden'); // again we added class here
+    }
+   }
+</script>
+
+<!--------OR-------->
+<!-- 
+<script>
+
+    function visibility(){
+     var a = document.getElementById('content')
+     // console.log(a);
+     content.classList.toggle('content1')
+    }
+ </script> -->
+</body>
+</html>
+
+
+<!-- Here's what's happening:
+
+1. document.getElementById('content'): This function call queries the Document Object Model (DOM) of the HTML document to find an element with the specified id attribute, in this case, "content".
+
+2. The element with the id "content" is a <div> element in your HTML code.
+
+3. Once found, this element is returned by the function getElementById().
+
+4. var a = ...: The retrieved element is then assigned to the variable 'a'. This allows us to reference and manipulate the element using the variable 'a' within the script. -->
+
+
+

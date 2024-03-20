@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+   
+    <button type="button" onclick="myalert();">Alert</button>
+    <br><br>
+
+    <button type="button" onclick="myconfirm();">Confirm</button><span id="con"></span>
+    <br><br>
+
+    <button type="button" onclick="myclick1();">1</button><span id="1"></span>
+    <br><br>
+
+    <button type="button" onclick="myprompt();">Prompt</button><span id="name"></span>
+    <br><br>
+
+    <button type="button" onclick="myparameterfunc('gulshan','engineer',15000);">My Parameter Function</button><span id="para"></span>
+    <br><br>
+
+    <input type="text" id="num1">
+    <input type="text" id="num2" readonly="true">
+    <input type="text" id="num3" readonly="true">
+    <button type="button" onmouseover="getval1()">Get Value</button>
+    <br><br>
+
+    <input type="text" id="num4" onblur="document.getElementById('num5').value = document.getElementById('num4').value">
+    <input type="text" id="num5" readonly="true">
+    <!-- -----OR-------->
+    <!-- <input type="text" id="num4" onblur="document.getElementById('num5').value = this.value">
+    <input type="text" id="num5" readonly="true"> -->
+    <!-------OR-------->
+    <!-- <input type="text" id="num4" onblur="getval2()">
+    <input type="text" id="num5" readonly="true"> -->
+
+    <br><br>
+    <input type="text" id="num6" onkeyup="getval3()">
+    <input type="text" id="num7" readonly="true">
+
+   
+    <br><br><br><br><br>
+    <h3>Calculator</h3>
+    <input type="text" id="v1" size="3"/>
+    <span id="operator"></span>
+    <input type="text" id="v2" size="3"/>
+    <span id="result"> </span><br><br>
+    <button type="button" onclick="return getvals('+')">+</button>
+    <button type="button" onclick="return getvals('-')">-</button>
+    <button type="button" onclick="return getvals('*')">x</button>
+    <button type="button" onclick="return getvals('/')">/</button>
+    <button type="button" onclick="return getvals('%')">%</button>
+    <button type="button" onclick="return getvals('c')">C</button>
+    
+    <script src="assets/js/main1.js"></script>
+</body>
+</html>

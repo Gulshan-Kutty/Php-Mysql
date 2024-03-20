@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Methods</title>
+    <style>
+        body{
+            font-family: arial;
+        }
+        #box{
+
+            background: pink;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Get Methods</h1>
+    <div id="box" class="test abc">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum <span>dolor sit amet</span>,Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, illum.</p>
+    </div>
+    <br><br>
+
+    <form action="" id="sform">
+        <label for="">Name:</label> <input type="text" id="sname"><br><br>
+        <label for="">Class:</label> <input type="text" id="sclass"><br><br>
+
+        <label for="">Country:</label>
+        <select name="" id="scountry">
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+            <option value="China">China</option>
+            <option value="zimbabwe">Zimbabwe</option>
+        </select>
+        <br><br>
+        <input type="submit">
+        <!-- ------OR------ -->
+        <!-- <button type="submit">Submit</button> -->
+
+    </form>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        // var x = document.getElementById('box').innerHTML
+        // console.log(x);
+        $(document).ready(function(){
+            var a = $('#box').html(); // get inner html
+            console.log(a);
+
+            var b = $('#box').text(); // get inner html
+            console.log(b);
+
+            var c = $('#box').attr('class'); // get inner html
+            console.log(c);
+
+            $('#sform').submit(function(){
+                var name = $('#sname').val();
+                var cname = $('#sclass').val();
+                var country = $('#scountry').val();
+                alert("Hello "+name+" Class: "+cname+" Country: "+country);
+            });
+        });
+    </script>
+</body>
+</html>

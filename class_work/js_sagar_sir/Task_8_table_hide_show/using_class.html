@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <button onclick="visibility()">Multiplication Table</button>
+
+    <div id="table" class="hidden"></div>
+
+    <script>
+        function generateTable() {
+            document.getElementById('table').innerHTML = '<h2 style="text-align: center;">Multiplication Table</h2>';
+
+            let tb1 = "<table border='1' cellpadding='15px' cellspacing='0px' align='center' width='80%'>";
+
+            for (let i = 1; i <= 10; i++) {
+                tb1 += "<tr>";
+                for (let j = 1; j <= 10; j++) {
+                    tb1 += "<td>" + j + " X " + i + " = " + i * j + "</td>";
+
+                }
+                tb1 += "</tr>";
+            }
+            tb1 += "</table>";
+            document.getElementById('table').innerHTML += tb1;
+        }
+        function visibility() {
+            var a = document.getElementById('table')
+            // console.log(a);
+            if (a.classList.contains('hidden')) {
+                generateTable();
+                a.classList.remove('hidden'); // we removed class here
+            }
+            else {
+                a.classList.add('hidden'); // again we added class here
+            }
+        }
+    </script>
+</body>
+
+</html>

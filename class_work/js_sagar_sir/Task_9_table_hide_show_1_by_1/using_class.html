@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <button onclick="visibility()">Multiplication Table</button>
+
+    <div id="buttons"></div>
+    <div id="table" class="hidden"></div>
+
+    <script>
+        function generateTable(number) {
+            document.getElementById('table').innerHTML = '<h2 style="text-align: center;">Multiplication Table of ' + number + '</h2>';
+
+            let tb = "<table border='1' cellpadding='15px' cellspacing='0px' align='center' width='80%'>";
+
+            for (let i = 1; i <= 10; i++) {
+                tb += "<tr>";
+                tb += "<td>" + number + " X " + i + " = " + number * i + "</td>";
+                tb += "</tr>";
+            }
+            tb += "</table>";
+            document.getElementById('table').innerHTML += tb;
+        }
+
+        function visibility() {
+            var buttonsDiv = document.getElementById('buttons');
+            var tableDiv = document.getElementById('table');
+            if (buttonsDiv.innerHTML === "") {
+                for (let i = 1; i <= 10; i++) {
+                    let button = document.createElement('button');
+                    button.textContent = i;
+                    button.onclick = function() {
+                        generateTable(i);
+                        tableDiv.classList.remove('hidden');
+                    };
+                    buttonsDiv.appendChild(button);
+                }
+            } else {
+                buttonsDiv.innerHTML = "";
+                tableDiv.innerHTML = "";
+                tableDiv.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+
+</html>

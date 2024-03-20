@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h2><i><u>Calculator</u></i></h2>
+    <input type="text" id="v1" size="3" />
+    <span id="operator"></span>
+    <input type="text" id="v2" size="3" />
+    <span id="result"></span><br><br>
+    <button type="button" class="operator" data-operator="+">+</button>
+    <button type="button" class="operator" data-operator="-">-</button>
+    <button type="button" class="operator" data-operator="x">x</button>
+    <button type="button" class="operator" data-operator="/">/</button>
+    <button type="button" class="operator" data-operator="%">%</button>
+    <button type="button" id="clear">clear</button>
+    
+    <!-- A custom attribute in HTML refers to an attribute that you define yourself for an HTML element. These attributes are prefixed with "data-" followed by a descriptive name, such as "data-" followed by your custom attribute name.
+    
+    Custom attributes are a way to store additional information about an HTML element that is not part of the standard HTML attributes. They are typically used to store data or configuration information that can be accessed and manipulated later using JavaScript or CSS. -->
+    
+<script>
+    $(document).ready(function(){
+        $('.operator').click(function(){
+            var operator = $(this).data('operator'); // This is a jQuery method used to retrieve the value of a data attribute. It takes the name of the data attribute as an argument. In this case, 'operator' is provided as the argument, indicating that we want to retrieve the value of the data-operator attribute.The value stored in this attribute represents the arithmetic operator associated with the button (e.g., +, -, x, /, %). This value is then assigned to the variable operator.
+
+            // About 'this'-> When a user clicks on the specific button, it triggers the click event, and the corresponding event handler in your JavaScript code executes. Within that event handler, 'this' refers to the specific <button> element that was clicked, i.e., the DOM element representing that button.
+
+            // console.log(operator);
+            $('#operator').text(operator); // This line sets the text content of the element with the id 'operator' to the value stored in the variable operator. This effectively displays the selected operator on the webpage.
+            calculate();
+        });
+        
+        $('#clear').click(function(){
+            $('#v1').val(''); // setting empty value
+            $('#v2').val(''); // setting empty value
+            $('#operator').text(''); // setting empty text
+            $('#result').text(''); // setting empty text
+        });
+
+        function calculate() {
+            var v1 = parseFloat($('#v1').val());
+            var v2 = parseFloat($('#v2').val());
+            var operator = $('#operator').text(); // This line retrieves(get) the text content of the element with the id operator and stores it in the variable operator. This represents the operator selected by the user.
+
+            var result; // This line declares a variable named result without assigning it a value.
+
+            switch (operator) {
+                case '+':
+                    result = v1 + v2;
+                    break;
+                case '-':
+                    result = v1 - v2;
+                    break;
+                case 'x':
+                    result = v1 * v2;
+                    break;
+                case '/':
+                    result = v1 / v2;
+                    break;
+                case '%':
+                    result = (v1 / v2)*100;
+                    break;
+                default:
+                    result = '';
+            }
+
+            $('#result').text("= "+ result); //  This line sets the text content of the element with the id result to the string "= " concatenated with the value of the variable result. This displays the calculated result on the webpage.
+        }
+    });
+</script>
+</body>
+</html>
+

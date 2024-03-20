@@ -9,12 +9,12 @@
         #box{
             background: pink;
             padding: 10px;
-            border : 1px solid #000;
+            border : 1px solid #eaaaaa;
         }
     </style>
 </head>
 <body>
-    <h1>jQuery Mouse Events</h1>
+    <h1>jQuery Keyboard Events</h1>
     <div id="box" class="test">
         <h2>Test Box</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aliquid!</p>
@@ -23,16 +23,18 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#box").keypress(function(){
-                $("#box").css('background-color','green')
+            $("body").keypress(function(){
+                $("body").css('background-color','orange')
+                // -----OR-----
+                // $(this).css('background-color','orange')
             });
 
-            $("#box").dblclick(function(){
-                $("#box").css('background-color','orange')
+            $("body").keyup(function(){
+                $("body").css('background-color','green')
             });
-
-            $("#box").contextmenu(function(){
-                $("#box").css('background-color','blue')
+d
+            $("body").keydown(function(){
+                $("body").css('background-color','blue')
             });
 
         });

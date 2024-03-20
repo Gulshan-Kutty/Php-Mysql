@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkbox Values</title>
+</head>
+<body>
+
+<form id="checkboxForm">
+    <input type="checkbox" id="checkbox1" name="checkbox1" value="chennai">
+    <label for="checkbox1">Chennai</label><br>
+    <input type="checkbox" id="checkbox2" name="checkbox2" value="lucknow">
+    <label for="checkbox2">Lucknow</label><br>
+    <input type="checkbox" id="checkbox3" name="checkbox3" value="mumbai">
+    <label for="checkbox3">Mumbai</label><br>
+    <input type="checkbox" id="checkbox4" name="checkbox4" value="kolkata">
+    <label for="checkbox4">Kolkata</label><br><br>
+    <input type="button" onclick="getSelectedCheckboxes()" value="Get Selected Checkboxes">
+</form>
+
+<script>
+function getSelectedCheckboxes() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    // console.log(checkboxes);
+    var values = [];
+
+    checkboxes.forEach(function(checkbox) {
+        values.push(checkbox.value);
+    });
+    // ------OR------
+    // for (var checkbox of checkboxes) {
+    //       values.push(checkbox.value);
+    //   }
+
+    console.log(values);
+}
+</script>
+
+</body>
+</html>
+
+
+<!--------OR-------->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Example</title>
+</head>
+<body>
+  <form id="cityForm">
+    <label for="city1">
+      <input type="checkbox" id="city1" name="city" value="New York"> New York
+    </label><br>
+    <label for="city2">
+      <input type="checkbox" id="city2" name="city" value="Los Angeles"> Los Angeles
+    </label><br>
+    <label for="city3">
+      <input type="checkbox" id="city3" name="city" value="London"> London
+    </label><br>
+    <label for="city4">
+      <input type="checkbox" id="city4" name="city" value="Tokyo"> Tokyo
+    </label><br>
+    <button type="button" onclick="printSelectedCities()">Print Selected Cities</button>
+  </form>
+
+  <script>
+    function printSelectedCities() {
+      var form = document.getElementById("cityForm");
+      var checkboxes = form.elements["city"];
+      var selectedCities = [];
+
+      for (var checkbox of checkboxes) {
+        if (checkbox.checked) {
+          selectedCities.push(checkbox.value);
+        }
+      }
+
+      console.log("Selected Cities:", selectedCities.join(", "));
+      console.log(selectedCities);
+    }
+  </script>
+</body>
+</html> -->

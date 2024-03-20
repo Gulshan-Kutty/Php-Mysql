@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="v1" onkeyup="getval('1')">
+    <input type="text" id="v2" onkeyup="getval('2')">
+    <input type="text" id="v3" onkeyup="getval('3')">
+    <input type="text" id="v4" onkeyup="getval('4')">
+    <input type="text" id="v5" onkeyup="getval('5')">
+    <input type="text" id="v6" onkeyup="getval('6')">
+    <input type="text" id="v7" onkeyup="getval('7')">
+    <input type="text" id="v8" onkeyup="getval('8')">
+    <input type="text" id="v9" onkeyup="getval('9')">
+    <input type="text" id="v10" onkeyup="getval('10')">
+    <input type="text" id="v11" onkeyup="getval('11')">
+    <input type="text" id="v12" onkeyup="getval('12')">
+    <br><br>
+    Total:<input type="text" id="total" readonly="true">
+    Average:<input type="text" id="avg" readonly="true">
+    Percentage:<input type="text" id="percent" readonly="true">
+    <br><br>
+    <div>Highest salary started from month:<span id="mon"></span></div>
+
+    <script>
+
+        var total = 0; // declaring total as global variable
+
+        function getval(params) {
+            // alert(params);
+            // alert(typeof(params));
+            for (params; params < 12; params++) {
+                // code block to be executed
+                var date = parseInt(params) + 1;
+                document.getElementById('v' + date).value =
+                    document.getElementById('v' + params).value;
+            }
+
+          
+        gettotal(); 
+        getavg();
+        getpercent(); // we called these functions here(inside getval() fun), because function will get called only on keyup event and getval() fun is called only on keyup event.
+        mon();
+
+        }
+
+
+        function gettotal() {
+            total = 0; //If you skip the line total = 0; inside the gettotal() function, it will accumulate the values entered into the input fields without resetting total to zero each time gettotal() is called. 
+            for (var i = 1; i <= 12; i++) {
+                total += parseInt(document.getElementById('v' + i).value) || 0;
+            }
+            document.getElementById('total').value = total;
+           
+        }
+
+        function getavg(){
+
+            var average = parseFloat(total / 12);
+            document.getElementById('avg').value=average;
+
+        }
+
+        function getpercent(){
+
+            var percent = parseFloat(total / 120000*100);
+            document.getElementById('percent').value=percent;
+
+        }
+
+        function mon(){
+
+            // Logic to find the month with the highest salary
+            var highestMonth = "January"; // Assuming January as the initial month
+            var highestValue = parseInt(document.getElementById('v1').value) || 0;
+            for (var i = 2; i <= 12; i++) {
+                var value = parseInt(document.getElementById('v' + i).value) || 0;
+                if (value > highestValue) {
+                    highestValue = value;
+                    switch (i) {
+                        case 2:
+                            highestMonth = "February";
+                            break;
+                        case 3:
+                            highestMonth = "March";
+                            break;
+                        case 4:
+                            highestMonth = "April";
+                            break;
+                        case 5:
+                            highestMonth = "May";
+                            break;
+                        case 6:
+                            highestMonth = "June";
+                            break;
+                        case 7:
+                            highestMonth = "July";
+                            break;
+                        case 8:
+                            highestMonth = "August";
+                            break;
+                        case 9:
+                            highestMonth = "September";
+                            break;
+                        case 10:
+                            highestMonth = "October";
+                            break;
+                        case 11:
+                            highestMonth = "November";
+                            break;
+                        case 12:
+                            highestMonth = "December";
+                            break;
+                        default:
+                            highestMonth = "January"; // Default to January
+                    }
+                }
+            }
+            document.getElementById('mon').innerHTML = "Highest salary started from month: " + highestMonth;
+        }
+
+    
+    </script>
+</body>
+
+</html>

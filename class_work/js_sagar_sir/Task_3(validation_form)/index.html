@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <form name="myform" onsubmit= "return validate_form()" enctype="multipart/form-data">
+        <table border="1" cellpadding="10px" cellspacing="0px" width="80%">
+            <tr>
+                <td>Name:</td>
+                <td><input style="width: 250px" type="text" name="name" autocomplete="off"></td>
+                <td width="400px"><div id="errname"></div></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input style="width: 250px" type="text" name="email" autocomplete="off"></td>
+                <td id="erremail"></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" id="" cols="30" rows="08" autocomplete="off"></textarea></td>
+                <td id="erraddress"></td>
+            </tr>
+            <tr>
+                <td>Mobile No:</td>
+                <td><input type="text" name="mobile" autocomplete="off"></td>
+                <td id="errmobile"></td>
+
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                <label for="male"><input type="radio" name="gender" id="male" value="male" autocomplete="off">Male</label>
+                <br>
+                <label for="female"><input type="radio" name="gender" id="female" value="female" autocomplete="off">Female</label>
+                </td>
+                <td id="errgender"></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><select name="city" id="">
+                    <option value="">--Select City--</option>
+                    <option value="nagpur">Nagpur</option>
+                    <option value="pune">Pune</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="amravati">Amravati</option>
+                </select></td>
+                <td id="errcity"></td>
+            </tr>
+            <td>Photo:</td>
+            <td><input type="file" name="photo" autocomplete="off"></td>
+            <td id="errphoto"></td>
+        </table>
+        <br>
+        <input type="submit">
+        <!--------OR-------->
+        <!-- <button type="submit">Submit</button> -->
+    </form>
+
+
+
+    <script src="assets/js/script2.js"></script>
+</body>
+</html>
