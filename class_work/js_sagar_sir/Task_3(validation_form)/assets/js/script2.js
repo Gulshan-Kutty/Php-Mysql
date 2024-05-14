@@ -22,8 +22,9 @@ function validate_form(){
             document.getElementById("errname").innerHTML="";
         },2000)
         document.myform.name.focus();
-        return false; 
-    }else if(!(pattern_name).test(name)) // test keyword is used to check the pattern with the name
+        return false; // Halt execution, indicating validation failure
+         // In each case, return false is used to immediately exit the function and prevent form submission or further processing, indicating that the corresponding validation has failed. This prevents the form from being submitted until all validation criteria are met. If all validations pass, the function will eventually reach return true, allowing the form submission to proceed.
+    }else if(!(pattern_name).test(name)) // test keyword is used to check the pattern for the name
     {
         document.getElementById("errname").innerHTML="<div class='error'> Please enter valid name </div>";
         setTimeout(function(){
